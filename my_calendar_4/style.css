@@ -1,0 +1,43 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: lightblue;
+}
+
+header{
+  align-items: left;
+}
+
+.days_of_week, .day_number{
+  display: grid;
+  grid-template-columns: repeat(7, 2fr);
+}
+
+.days_of_week{
+  background-color:lightcoral;
+  text-align: center;
+  height: 75px;
+}
+
+.day_number{
+  text-align: right;
+  font-weight: bold;
+}
+
+.day{
+  margin: 5px;
+  border: 1px solid black;
+  height: 100px;
+  padding: 3px;
+  overflow: scroll;
+}
+
+.day p{
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+.event{
+  text-align: left;
+}
+

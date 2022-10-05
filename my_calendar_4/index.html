@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calendar</title>
+    <link href='style.css' type='text/css' rel='stylesheet'/>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
+</head>
+
+<body>
+    <header id='header'>
+        <form id='login_form'>
+            Login:
+            <input type="text" id="username" placeholder="Username" />
+            <input type="password" id="password" placeholder="Password" />
+            <button id="login_btn">Log In</button>
+            
+        </form>
+        <form id='register_form'>
+            Register New User:
+            <input type="text" id="username_register" placeholder="Username" />
+            <input type="password" id="password_register" placeholder="Password" />
+            <button id="register_btn">Register</button>
+        </form>
+        <button id='logout_btn' hidden>Logout</button> 
+    </header>
+    <br>
+    <div id='month_header'>
+        
+
+        <form id='create_event' hidden>
+            Create Event: 
+            <input type='text' placeholder="Event Title" id='title_input'/>
+            <input type="date" id='date_input'/>
+            <input type="time" id='time_input' />
+            
+            <select name="priority" id='priority'>
+              <option value="no_priority"> Choose Priority (optional) </option>
+              <option value="low"> Low </option>
+              <option value="high"> High </option>
+            </select>
+            <input type="submit"  value='Add Event' id='submit_event'/>
+        </form> <br>
+      
+        <!--<form id='send_events' hidden>
+            Send Your Events to Someone Else's Calendar: 
+            <input type='text' placeholder="Their Username" id='send_username_input'/>
+            <input type="submit" value='Send Your Events' id='send_events_button'/>
+        </form>-->
+
+        <br> <br>
+        <button id='previous_month'>Previous Month</button>
+        <button id='next_month'>Next Month</button>
+
+        <form id='edit_event' hidden>
+                <input type='text' placeholder="Event Title" id='edit_title_input'/>
+                <input type="date" id='edit_date_input'/>
+                <input type="time" id='edit_time_input' />
+                <select name="priority" id='edit_priority_input'>
+                  <option value="no_priority"> Choose Priority (optional) </option>
+                  <option value="low"> Low </option>
+                  <option value="high"> High </option>
+                </select>
+                <input type="submit"  value='Update Event' id='update_event'/>
+                <input type="hidden" id='edit_eventId' />
+        </form>
+        <form id='share_event' hidden>
+              <input type = 'text' placeholder="Username to Send To" id='username_send_input'/>
+              <input type="submit" value='Send Event' id='send_event'/>
+              <input type="hidden" id='share_eventId'/>
+        </form>
+        <p id='invalid_format' hidden>Invalid input</p>
+    </div>
+
+    <div class='days_of_week'>
+        <p>Sun</p>
+        <p>Mon</p>
+        <p>Tue</p>
+        <p>Wed</p>
+        <p>Thu</p>
+        <p>Fri</p>
+        <p>Sat</p>
+    </div>
+
+    <div class='day_number' id='day_number'></div>
+    <script src="ajax.js"></script>
+    <script src='create_calendar.js'></script>
+</body>
+</html>
